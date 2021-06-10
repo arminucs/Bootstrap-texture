@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -256,13 +259,15 @@
     <script type="text/javascript">
 
   function deletHome() {
-    var item = document.getElementsByClassName("home")[0];
-    item.style.display = "none";
+   
+     $(".home").hide();
+
   };    
 
   function showHome() {
-    var item = document.getElementsByClassName("home")[0];
-    item.style.display = "flex";
+  
+   $(".home").show();
+ 
   };    
 
 
@@ -273,17 +278,13 @@
 <script type="text/javascript">
 
   function deletGallery(selectGallery) {
-    var items = document.querySelectorAll(".gallery");
-    console.log(items.length);
-    for(i=0; i<items.length; i++){
-      items[i].style.display = "none";
-      };
-    var item = document.getElementById(selectGallery);
-    if(item) {
-      item.style.display = "flex";
-    }
+    $(".gallery").each(function(index){
 
-    // deletHome(); 
+    $(this).hide();
+      });
+
+    $("#" +selectGallery).show();
+
 
   };    
 
